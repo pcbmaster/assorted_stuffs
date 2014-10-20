@@ -1,0 +1,11 @@
+CC=g++
+CSVFLAGS=csv_parser-config --cxxflags --libs
+CFLAGS= -g
+LFLAGS=-lcurl -lcsv
+SRC=main
+TARGET=skeletor
+
+all: $(TARGET)
+
+$(TARGET): $(SRC).cpp
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC).cpp $(LFLAGS) $(CSVFLAGS)

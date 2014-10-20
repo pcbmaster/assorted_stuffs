@@ -1,0 +1,5 @@
+#!/bin/bash
+RAW=$(ps aux | grep -m 1 skeletor)
+PID=$(echo $RAW | cut -d' ' -f2)
+kill -s 10 $PID
+echo Sent SIGUSR1 to $PID

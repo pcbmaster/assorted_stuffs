@@ -1,0 +1,16 @@
+#include <string>
+#include <vector>
+
+#ifndef csv_h
+#define csv_h
+
+class csv {
+ public:
+  csv();
+  std::vector < std::vector<std::string> > parse(std::string values);
+  int rows(std::string values);
+  int columns(std::string values);
+  std::string compose(std::string fields[], int values[], int rows);
+ private:
+};
+#endif

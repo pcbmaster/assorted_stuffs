@@ -1,0 +1,20 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<unistd.h> //for sleep command
+#include<curses.h>
+
+int main(void) {
+  WINDOW * mainwin;
+  if((mainwin = initscr()) == NULL){
+    fprintf(stderr, "Error initalising ncurses.\n");
+    exit(EXIT_FAILURE);
+  }
+  mvaddstr(13, 33, "Hello World!");
+  refresh();
+  sleep(3);
+  delwin(mainwin);
+  endwin();
+  refresh();
+
+  return 0;
+}

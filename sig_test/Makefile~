@@ -1,0 +1,10 @@
+CC=g++
+CFLAGS=-I -lsdc++.
+DEPS =
+OBJ = main.o 
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+skeletor: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
